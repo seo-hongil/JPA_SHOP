@@ -1,7 +1,7 @@
 package com.jpa.jpashop;
 
-import com.jpa.jpashop.Entity.Member;
-import com.jpa.jpashop.Repository.MemberRepository;
+import com.jpa.jpashop.entity.Member;
+import com.jpa.jpashop.repository.MemberRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
