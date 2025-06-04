@@ -1,6 +1,7 @@
 package com.jpa.jpashop.entity.item;
 
 import com.jpa.jpashop.entity.Category;
+import com.jpa.jpashop.exception.NotEnoughStockException;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,5 +36,18 @@ public abstract class Item {
         this.name = name;
         this.price = price;
         this.stock = stock;
+    }
+
+    public void addStock(int quantity){
+        stock += quantity;
+    }
+
+    public void removeStock(int quantity){
+        int restStock = stock - quantity;
+
+        if(restStock < 0){
+            throw new NotEnoughStockException("재고가 부족합니다.");
+        }
+        this.stock = restStock;
     }
 }
