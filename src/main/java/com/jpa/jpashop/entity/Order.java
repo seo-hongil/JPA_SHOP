@@ -62,7 +62,7 @@ public class Order {
     public int getTotalPrice() {
         int totalPrice = 0;
         for (OrderItem orderItem : orderItems) {
-            totalPrice += orderItem.getPrice();
+            totalPrice += orderItem.getPrice() * orderItem.getCount();
         }
         return totalPrice;
     }

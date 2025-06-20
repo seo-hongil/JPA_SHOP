@@ -5,6 +5,8 @@ import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class OrderRepository {
@@ -17,5 +19,9 @@ public class OrderRepository {
 
     public Order findOne(Long id){
         return em.find(Order.class, id);
+    }
+
+    public Optional<Order> findById(Long id) {
+        return Optional.ofNullable(em.find(Order.class, id));
     }
 }
