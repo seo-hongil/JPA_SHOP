@@ -1,6 +1,7 @@
 package com.jpa.jpashop.repository;
 
 import com.jpa.jpashop.entity.Order;
+import com.jpa.jpashop.entity.item.Item;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;

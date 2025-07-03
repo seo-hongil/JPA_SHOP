@@ -5,6 +5,7 @@ import com.jpa.jpashop.entity.item.Item;
 import com.jpa.jpashop.repository.ItemRepository;
 import com.jpa.jpashop.repository.MemberRepository;
 import com.jpa.jpashop.repository.OrderRepository;
+import com.jpa.jpashop.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,5 +52,9 @@ public class OrderService {
 
         //주문 취소
         order.cancel();
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
     }
 }
